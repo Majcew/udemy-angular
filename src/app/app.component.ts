@@ -7,16 +7,17 @@ import { STATE } from './success/success.component'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  btnState : STATE = STATE.OFF
-  visibleText: string = 'nothing'
+  btnState : STATE = STATE.OFF;
+  visibleText: string = '';
+  eventHandledText: string = "No text was triggered from button click yet!";
 
-  constructor() {
-    setTimeout(()=>{
-      this.btnState = STATE.ON
-    }, 2000)
-   }
+  constructor() {}
 
    onInputChange(event: Event){
     this.visibleText = (<HTMLInputElement>event.target).value
+   }
+
+   onButtonClick(){
+    this.visibleText = '';
    }
 }
