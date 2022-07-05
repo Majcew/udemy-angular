@@ -1,5 +1,6 @@
-<input class="form-control" type="text" (input)="onInputChange($event)"/>
-<p>{{ visibleText }}</p>
+<!-- <input class="form-control" type="text" (input)="onInputChange($event)"/> -->
+<input class="form-control" type="text" [(ngModel)]="visibleText"/>
 <app-success></app-success>
 <app-alert></app-alert>
-<button class="btn btn-primary" [disabled]="!btnState">Click me!</button>
+<button class="btn btn-primary" [disabled]="visibleText===''" (click)="onButtonClick()">Click me!</button>
+<p>Text after click: {{ eventHandledText }}</p>
